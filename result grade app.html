@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result App</title>
+</head>
+
+<body>
+    <h1>Result App</h1>
+    <form onsubmit="gradeCheck(); return false ;">
+        <label for="grade">Result In Grade:</label>
+        <input type="number" id="grade" placeholder="Enter Marks OutOf 1000 ">
+        <br>
+        <br>
+        <button type="submit">Check</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function gradeCheck() {
+
+            let grade = +document.querySelector("#grade").value;
+
+
+            if (grade > 900) {
+                document.querySelector("#result").innerHTML =
+                    "<b>A very Big Congratulations!</b>" + "You Have Got <b>A1</b>-Grade.";
+
+            } else if (grade > 800) {
+                document.querySelector("#result").innerHTML ="You Have Got <b>A</b>-Grade.";
+            
+            }
+
+            else if (grade > 700) {
+                document.querySelector("#result")
+                    .innerHTML = "You Have Got <b>B</b>-Grade.";
+            }
+
+            else if (grade > 600) {
+                document.querySelector("#result")
+                    .innerHTML = "<b>Passed!</b>" + "You Have Got <b>C</b>-Grade.";
+
+            } else if (grade > 500) {
+                document.querySelector("#result")
+                    .innerHTML = "<b>Passed!</b>" + "You Have Got <b>D</b>-Grade.";
+            } else if (grade > 400) {
+                document.querySelector("#result")
+                    .innerHTML = "<b>Passed!</b>" + "You Have Got <b>E</b>-Grade.";
+            } else {
+                document.querySelector("#result").innerHTML = "<b>Sorry!</b>" + "You are <b>Failed</b>";
+            }
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>
